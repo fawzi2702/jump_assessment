@@ -1,0 +1,19 @@
+version: "3"
+services:
+  pg_db:
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "1"
+    restart: always
+
+  server:
+    environment:
+      - MODE=prod
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "1"
+    restart: always
